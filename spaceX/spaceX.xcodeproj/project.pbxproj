@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -168,7 +168,6 @@
 				89944E823CC70CB6D42265D8 /* Pods-spaceXTests.debug.xcconfig */,
 				051A8EFC7C879C99EEBF3C9B /* Pods-spaceXTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -183,6 +182,7 @@
 				360CBCDD25DD7D2700168BE1 /* Sources */,
 				360CBCDE25DD7D2700168BE1 /* Frameworks */,
 				360CBCDF25DD7D2700168BE1 /* Resources */,
+				D505B2D8BAACA29D47ECFCF7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,6 +220,7 @@
 				360CBD0125DD7D2800168BE1 /* Sources */,
 				360CBD0225DD7D2800168BE1 /* Frameworks */,
 				360CBD0325DD7D2800168BE1 /* Resources */,
+				DACBB87204234D543AFEDF52 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -365,6 +366,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D505B2D8BAACA29D47ECFCF7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-spaceX/Pods-spaceX-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-spaceX/Pods-spaceX-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-spaceX/Pods-spaceX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DACBB87204234D543AFEDF52 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-spaceX-spaceXUITests/Pods-spaceX-spaceXUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-spaceX-spaceXUITests/Pods-spaceX-spaceXUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-spaceX-spaceXUITests/Pods-spaceX-spaceXUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -592,7 +627,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89944E823CC70CB6D42265D8 /* Pods-spaceXTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74NEMUMYKN;
@@ -615,7 +649,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 051A8EFC7C879C99EEBF3C9B /* Pods-spaceXTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74NEMUMYKN;
@@ -638,7 +671,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 10E94EF4628A79A3BEEC2FA6 /* Pods-spaceX-spaceXUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74NEMUMYKN;
 				INFOPLIST_FILE = spaceXUITests/Info.plist;
@@ -659,7 +691,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99072490BAC58A4AAC9A1D54 /* Pods-spaceX-spaceXUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74NEMUMYKN;
 				INFOPLIST_FILE = spaceXUITests/Info.plist;
