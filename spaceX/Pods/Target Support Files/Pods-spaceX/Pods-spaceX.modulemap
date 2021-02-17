@@ -1,0 +1,6 @@
+framework module Pods_spaceX {
+  umbrella header "Pods-spaceX-umbrella.h"
+
+  export *
+  module * { export * }
+}
