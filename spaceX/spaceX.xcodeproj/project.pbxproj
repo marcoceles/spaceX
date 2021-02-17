@@ -17,6 +17,7 @@
 		360CBCF425DD7D2800168BE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360CBCF225DD7D2800168BE1 /* LaunchScreen.storyboard */; };
 		360CBCFF25DD7D2800168BE1 /* spaceXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBCFE25DD7D2800168BE1 /* spaceXTests.swift */; };
 		360CBD0A25DD7D2800168BE1 /* spaceXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBD0925DD7D2800168BE1 /* spaceXUITests.swift */; };
+		36E2913825DD847E001CD27B /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2913725DD847E001CD27B /* APIEndpoint.swift */; };
 		36E2914125DD8892001CD27B /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2914025DD8892001CD27B /* Rocket.swift */; };
 		36E2914225DD8892001CD27B /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2914025DD8892001CD27B /* Rocket.swift */; };
 		8C38B6255951273FB17C1AEF /* Pods_spaceXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FAAD0B5996303D804B7AAC /* Pods_spaceXTests.framework */; };
@@ -60,6 +61,7 @@
 		360CBD0525DD7D2800168BE1 /* spaceXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spaceXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		360CBD0925DD7D2800168BE1 /* spaceXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spaceXUITests.swift; sourceTree = "<group>"; };
 		360CBD0B25DD7D2800168BE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36E2913725DD847E001CD27B /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		36E2914025DD8892001CD27B /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		3D6026B22442EC88D0EBCCDB /* Pods-spaceX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spaceX.release.xcconfig"; path = "Target Support Files/Pods-spaceX/Pods-spaceX.release.xcconfig"; sourceTree = "<group>"; };
 		558BF71EB47B11165648A42A /* Pods_spaceX_spaceXUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spaceX_spaceXUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 		360CBCE325DD7D2700168BE1 /* spaceX */ = {
 			isa = PBXGroup;
 			children = (
+				36E2913625DD846A001CD27B /* API */,
 				36E2913F25DD887A001CD27B /* Model */,
 				360CBCE425DD7D2700168BE1 /* AppDelegate.swift */,
 				360CBCE625DD7D2700168BE1 /* SceneDelegate.swift */,
@@ -150,6 +153,14 @@
 				360CBD0B25DD7D2800168BE1 /* Info.plist */,
 			);
 			path = spaceXUITests;
+			sourceTree = "<group>";
+		};
+		36E2913625DD846A001CD27B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				36E2913725DD847E001CD27B /* APIEndpoint.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		36E2913F25DD887A001CD27B /* Model */ = {
@@ -426,6 +437,7 @@
 				360CBCE725DD7D2700168BE1 /* SceneDelegate.swift in Sources */,
 				36E2914125DD8892001CD27B /* Rocket.swift in Sources */,
 				360CBCEF25DD7D2700168BE1 /* spaceX.xcdatamodeld in Sources */,
+				36E2913825DD847E001CD27B /* APIEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
