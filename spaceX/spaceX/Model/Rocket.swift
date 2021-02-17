@@ -10,27 +10,27 @@ import Foundation
 // MARK: - Rocket
 struct Rocket: Codable {
     let id: Int
-    let active: Bool
-    let stages: Int
-    let boosters: Int
-    let costPerLaunch: Int
-    let successRatePct: Int
-    let firstFlight: String
-    let country: String
-    let company: String
-    let height: Diameter
-    let diameter: Diameter
-    let mass: Mass
-    let payloadWeights: [PayloadWeight]
-    let firstStage: FirstStage
-    let secondStage: SecondStage
-    let engines: Engines
-    let landingLegs: LandingLegs
-    let wikipedia: String
-    let rocketDescription: String
+    let active: Bool?
+    let stages: Int?
+    let boosters: Int?
+    let costPerLaunch: Int?
+    let successRatePct: Int?
+    let firstFlight: String?
+    let country: String?
+    let company: String?
+    let height: Diameter?
+    let diameter: Diameter?
+    let mass: Mass?
+    let payloadWeights: [PayloadWeight]?
+    let firstStage: FirstStage?
+    let secondStage: SecondStage?
+    let engines: Engines?
+    let landingLegs: LandingLegs?
+    let wikipedia: String?
+    let rocketDescription: String?
     let rocketID: String
-    let rocketName: String
-    let rocketType: String
+    let rocketName: String?
+    let rocketType: String?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -60,22 +60,22 @@ struct Rocket: Codable {
 
 // MARK: - Diameter
 struct Diameter: Codable {
-    let meters: Double
-    let feet: Double
+    let meters: Double?
+    let feet: Double?
 }
 
 // MARK: - Engines
 struct Engines: Codable {
-    let number: Int
-    let type: String
-    let version: String
-    let layout: String
-    let engineLossMax: Int
-    let propellant1: String
-    let propellant2: String
-    let thrustSeaLevel: Thrust
-    let thrustVacuum: Thrust
-    let thrustToWeight: Int
+    let number: Int?
+    let type: String?
+    let version: String?
+    let layout: String?
+    let engineLossMax: Int?
+    let propellant1: String?
+    let propellant2: String?
+    let thrustSeaLevel: Thrust?
+    let thrustVacuum: Thrust?
+    let thrustToWeight: Double?
 
     enum CodingKeys: String, CodingKey {
         case number
@@ -93,18 +93,18 @@ struct Engines: Codable {
 
 // MARK: - Thrust
 struct Thrust: Codable {
-    let kN: Int
-    let lbf: Int
+    let kN: Int?
+    let lbf: Int?
 }
 
 // MARK: - FirstStage
 struct FirstStage: Codable {
-    let reusable: Bool
-    let engines: Int
-    let fuelAmountTons: Double
-    let burnTimeSEC: Int
-    let thrustSeaLevel: Thrust
-    let thrustVacuum: Thrust
+    let reusable: Bool?
+    let engines: Int?
+    let fuelAmountTons: Double?
+    let burnTimeSEC: Int?
+    let thrustSeaLevel: Thrust?
+    let thrustVacuum: Thrust?
 
     enum CodingKeys: String, CodingKey {
         case reusable
@@ -118,30 +118,30 @@ struct FirstStage: Codable {
 
 // MARK: - LandingLegs
 struct LandingLegs: Codable {
-    let number: Int
+    let number: Int?
 }
 
 // MARK: - Mass
 struct Mass: Codable {
-    let kg: Int
-    let lb: Int
+    let kg: Int?
+    let lb: Int?
 }
 
 // MARK: - PayloadWeight
 struct PayloadWeight: Codable {
     let id: String
-    let name: String
-    let kg: Int
-    let lb: Int
+    let name: String?
+    let kg: Int?
+    let lb: Int?
 }
 
 // MARK: - SecondStage
 struct SecondStage: Codable {
-    let engines: Int
-    let fuelAmountTons: Double
-    let burnTimeSEC: Int
-    let thrust: Thrust
-    let payloads: Payloads
+    let engines: Int?
+    let fuelAmountTons: Double?
+    let burnTimeSEC: Int?
+    let thrust: Thrust?
+    let payloads: Payloads?
 
     enum CodingKeys: String, CodingKey {
         case engines
@@ -154,8 +154,8 @@ struct SecondStage: Codable {
 
 // MARK: - Payloads
 struct Payloads: Codable {
-    let option1: String
-    let compositeFairing: CompositeFairing
+    let option1: String?
+    let compositeFairing: CompositeFairing?
 
     enum CodingKeys: String, CodingKey {
         case option1 = "option_1"
@@ -165,7 +165,7 @@ struct Payloads: Codable {
 
 // MARK: - CompositeFairing
 struct CompositeFairing: Codable {
-    let height: Diameter
-    let diameter: Diameter
+    let height: Diameter?
+    let diameter: Diameter?
 }
 
