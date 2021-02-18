@@ -26,21 +26,32 @@ extension UIImageView{
             activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
 
-        let downloader = DownloadImageOperation(url)
-        downloader.completionBlock = {
-            DispatchQueue.main.async {
-                guard downloader.error == nil else{
-                    self.contentMode = .scaleAspectFit
-                    self.image = UIImage(named: "rocket_placeholder")
-                    return
+        if let imageCahed = ImageCache.shared.image(for: url){
+            self.contentMode = .scaleAspectFill
+            self.image = imageCahed
+            activityIndicator.stopAnimating()
+        }else{
+            let downloader = DownloadImageOperation(url)
+            downloader.completionBlock = {
+                DispatchQueue.main.async {
+                    guard downloader.error == nil else{
+                        self.contentMode = .scaleAspectFit
+                        self.image = UIImage(named: "rocket_placeholder")
+                        return
+                    }
+                    self.contentMode = .scaleAspectFill
+                    if let image = downloader.imageDownloaded{
+                        self.image = image
+                        ImageCache.shared.cache(image: image, for: url)
+                    }else{
+                        self.image = UIImage(named: "rocket_placeholder")
+                    }
+                    activityIndicator.stopAnimating()
                 }
-                self.contentMode = .scaleAspectFill
-                self.image = downloader.imageDownloaded
-                activityIndicator.stopAnimating()
             }
-        }
 
-        let queue = OperationQueue()
-        queue.addOperation(downloader)
+            let queue = OperationQueue()
+            queue.addOperation(downloader)
+        }
     }
 }

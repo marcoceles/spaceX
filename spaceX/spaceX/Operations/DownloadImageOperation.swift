@@ -8,7 +8,6 @@
 import UIKit
 import Alamofire
 
-
 class DownloadImageOperation: Operation {
     //1
     let url: URL
@@ -49,7 +48,7 @@ class DownloadImageOperation: Operation {
         }
 
         self.isExecuting = true
-        
+
         AF.download(url).responseData { (response) in
             switch response.result{
             case .success(let data):
