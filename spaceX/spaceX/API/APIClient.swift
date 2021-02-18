@@ -14,7 +14,7 @@ class APIClient{
 
     private init(){}
 
-    func makeAPICall<O : Decodable>(_ endpoint: APIEndpoint, responseClass: O.Type, decoder: JSONDecoder, completion: @escaping (Result<O, AFError>) -> Void) -> Void {
+    func makeAPICall<O : Decodable>(_ endpoint: APIEndpoint, responseClass: O.Type, completion: @escaping (Result<O, AFError>) -> Void) -> Void {
         let request = AF.request(endpoint, method: endpoint.method)
         request.responseDecodable { (response) in
             completion(response.result)
@@ -25,7 +25,7 @@ class APIClient{
 extension APIClient{
 
     public func getRockets(_ completion: @escaping (Result<[Rocket], Error>) -> Void){
-        self.makeAPICall(.getRockets, responseClass: [Rocket].self, decoder: JSONDecoder(), completion: { result in
+        self.makeAPICall(.getRockets, responseClass: [Rocket].self, completion: { result in
 
             switch result{
             case .success(let car):
