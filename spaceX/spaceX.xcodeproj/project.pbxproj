@@ -131,9 +131,7 @@
 				360CBCE425DD7D2700168BE1 /* AppDelegate.swift */,
 				360CBCE625DD7D2700168BE1 /* SceneDelegate.swift */,
 				360CBCE825DD7D2700168BE1 /* ViewController.swift */,
-				360CBCEA25DD7D2700168BE1 /* Main.storyboard */,
-				360CBCF025DD7D2800168BE1 /* Assets.xcassets */,
-				360CBCF225DD7D2800168BE1 /* LaunchScreen.storyboard */,
+				364668C525DE61480015E07A /* Resources */,
 				360CBCF525DD7D2800168BE1 /* Info.plist */,
 				360CBCED25DD7D2700168BE1 /* spaceX.xcdatamodeld */,
 			);
@@ -156,6 +154,24 @@
 				360CBD0B25DD7D2800168BE1 /* Info.plist */,
 			);
 			path = spaceXUITests;
+			sourceTree = "<group>";
+		};
+		364668C525DE61480015E07A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				364668C625DE61670015E07A /* Storyboards */,
+				360CBCF025DD7D2800168BE1 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		364668C625DE61670015E07A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				360CBCEA25DD7D2700168BE1 /* Main.storyboard */,
+				360CBCF225DD7D2800168BE1 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		36E2913625DD846A001CD27B /* API */ = {
