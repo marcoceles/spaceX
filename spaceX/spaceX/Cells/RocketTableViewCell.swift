@@ -22,6 +22,9 @@ class RocketTableViewCell: UITableViewCell {
         didSet{
             setupUI()
             updateUI()
+            guard let imageUrlString = rocket?.flickrImages?.first,
+                  let imageUrl = URL(string: imageUrlString) else {return}
+            self.rocketImageView.loadImageAsync(for: imageUrl)
         }
     }
 

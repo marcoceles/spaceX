@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0813E90733FFCFDC11DD528D /* Pods_spaceX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FE0236D2190141DB3D2D0B /* Pods_spaceX.framework */; };
+		360B5E2F25DEE8A0002D8603 /* DownloadImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B5E2E25DEE8A0002D8603 /* DownloadImageOperation.swift */; };
+		360B5E3825DEF620002D8603 /* UIImageView+SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B5E3725DEF620002D8603 /* UIImageView+SpaceX.swift */; };
 		360CBCE525DD7D2700168BE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBCE425DD7D2700168BE1 /* AppDelegate.swift */; };
 		360CBCE725DD7D2700168BE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBCE625DD7D2700168BE1 /* SceneDelegate.swift */; };
 		360CBCE925DD7D2700168BE1 /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBCE825DD7D2700168BE1 /* RocketsViewController.swift */; };
@@ -50,6 +52,8 @@
 		10E94EF4628A79A3BEEC2FA6 /* Pods-spaceX-spaceXUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spaceX-spaceXUITests.debug.xcconfig"; path = "Target Support Files/Pods-spaceX-spaceXUITests/Pods-spaceX-spaceXUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		14FE0236D2190141DB3D2D0B /* Pods_spaceX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spaceX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FAAD0B5996303D804B7AAC /* Pods_spaceXTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spaceXTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		360B5E2E25DEE8A0002D8603 /* DownloadImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageOperation.swift; sourceTree = "<group>"; };
+		360B5E3725DEF620002D8603 /* UIImageView+SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SpaceX.swift"; sourceTree = "<group>"; };
 		360CBCE125DD7D2700168BE1 /* spaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		360CBCE425DD7D2700168BE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		360CBCE625DD7D2700168BE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		360B5E2D25DEE881002D8603 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				360B5E2E25DEE8A0002D8603 /* DownloadImageOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
 		360CBCD825DD7D2700168BE1 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +144,7 @@
 			children = (
 				36E2913625DD846A001CD27B /* API */,
 				36E2913F25DD887A001CD27B /* Model */,
+				360B5E2D25DEE881002D8603 /* Operations */,
 				3682CB0B25DE750C00A049BA /* Cells */,
 				3682CB0A25DE74EA00A049BA /* ViewControllers */,
 				360CBCE425DD7D2700168BE1 /* AppDelegate.swift */,
@@ -200,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				36839E5725DE7B72007BE6DB /* Formatters.swift */,
+				360B5E3725DEF620002D8603 /* UIImageView+SpaceX.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -483,12 +497,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				360CBCE925DD7D2700168BE1 /* RocketsViewController.swift in Sources */,
+				360B5E3825DEF620002D8603 /* UIImageView+SpaceX.swift in Sources */,
 				36E2914E25DD8B26001CD27B /* APIClient.swift in Sources */,
 				360CBCE525DD7D2700168BE1 /* AppDelegate.swift in Sources */,
 				36839E5825DE7B72007BE6DB /* Formatters.swift in Sources */,
 				360CBCE725DD7D2700168BE1 /* SceneDelegate.swift in Sources */,
 				36E2914125DD8892001CD27B /* Rocket.swift in Sources */,
 				360CBCEF25DD7D2700168BE1 /* spaceX.xcdatamodeld in Sources */,
+				360B5E2F25DEE8A0002D8603 /* DownloadImageOperation.swift in Sources */,
 				36E2913825DD847E001CD27B /* APIEndpoint.swift in Sources */,
 				3682CB0D25DE753A00A049BA /* RocketTableViewCell.swift in Sources */,
 			);
