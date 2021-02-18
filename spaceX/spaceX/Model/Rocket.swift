@@ -9,7 +9,17 @@ import Foundation
 
 // MARK: - Rocket
 struct Rocket: Codable {
-    let id: Int
+    let height: Diameter?
+    let diameter: Diameter?
+    let mass: Mass?
+    let firstStage: FirstStage?
+    let secondStage: SecondStage?
+    let engines: Engines?
+    let landingLegs: LandingLegs?
+    let payloadWeights: [PayloadWeight]?
+    let flickrImages: [String]?
+    let name: String?
+    let type: String?
     let active: Bool?
     let stages: Int?
     let boosters: Int?
@@ -18,22 +28,22 @@ struct Rocket: Codable {
     let firstFlight: String?
     let country: String?
     let company: String?
-    let height: Diameter?
-    let diameter: Diameter?
-    let mass: Mass?
-    let payloadWeights: [PayloadWeight]?
-    let firstStage: FirstStage?
-    let secondStage: SecondStage?
-    let engines: Engines?
-    let landingLegs: LandingLegs?
     let wikipedia: String?
     let rocketDescription: String?
-    let rocketID: String
-    let rocketName: String?
-    let rocketType: String?
+    let id: String
 
     enum CodingKeys: String, CodingKey {
-        case id
+        case height
+        case diameter
+        case mass
+        case firstStage = "first_stage"
+        case secondStage = "second_stage"
+        case engines
+        case landingLegs = "landing_legs"
+        case payloadWeights = "payload_weights"
+        case flickrImages = "flickr_images"
+        case name
+        case type
         case active
         case stages
         case boosters
@@ -42,19 +52,9 @@ struct Rocket: Codable {
         case firstFlight = "first_flight"
         case country
         case company
-        case height
-        case diameter
-        case mass
-        case payloadWeights = "payload_weights"
-        case firstStage = "first_stage"
-        case secondStage = "second_stage"
-        case engines
-        case landingLegs = "landing_legs"
         case wikipedia
         case rocketDescription = "description"
-        case rocketID = "rocket_id"
-        case rocketName = "rocket_name"
-        case rocketType = "rocket_type"
+        case id
     }
 }
 
@@ -66,6 +66,9 @@ struct Diameter: Codable {
 
 // MARK: - Engines
 struct Engines: Codable {
+    let isp: ISP?
+    let thrustSeaLevel: Thrust?
+    let thrustVacuum: Thrust?
     let number: Int?
     let type: String?
     let version: String?
@@ -73,11 +76,12 @@ struct Engines: Codable {
     let engineLossMax: Int?
     let propellant1: String?
     let propellant2: String?
-    let thrustSeaLevel: Thrust?
-    let thrustVacuum: Thrust?
     let thrustToWeight: Double?
 
     enum CodingKeys: String, CodingKey {
+        case isp
+        case thrustSeaLevel = "thrust_sea_level"
+        case thrustVacuum = "thrust_vacuum"
         case number
         case type
         case version
@@ -85,9 +89,18 @@ struct Engines: Codable {
         case engineLossMax = "engine_loss_max"
         case propellant1 = "propellant_1"
         case propellant2 = "propellant_2"
-        case thrustSeaLevel = "thrust_sea_level"
-        case thrustVacuum = "thrust_vacuum"
         case thrustToWeight = "thrust_to_weight"
+    }
+}
+
+// MARK: - ISP
+struct ISP: Codable {
+    let seaLevel: Int?
+    let vacuum: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case seaLevel = "sea_level"
+        case vacuum
     }
 }
 
@@ -99,26 +112,27 @@ struct Thrust: Codable {
 
 // MARK: - FirstStage
 struct FirstStage: Codable {
+    let thrustSeaLevel: Thrust?
+    let thrustVacuum: Thrust?
     let reusable: Bool?
     let engines: Int?
     let fuelAmountTons: Double?
     let burnTimeSEC: Int?
-    let thrustSeaLevel: Thrust?
-    let thrustVacuum: Thrust?
 
     enum CodingKeys: String, CodingKey {
+        case thrustSeaLevel = "thrust_sea_level"
+        case thrustVacuum = "thrust_vacuum"
         case reusable
         case engines
         case fuelAmountTons = "fuel_amount_tons"
         case burnTimeSEC = "burn_time_sec"
-        case thrustSeaLevel = "thrust_sea_level"
-        case thrustVacuum = "thrust_vacuum"
     }
 }
 
 // MARK: - LandingLegs
 struct LandingLegs: Codable {
     let number: Int?
+    let material: String?
 }
 
 // MARK: - Mass
@@ -129,7 +143,7 @@ struct Mass: Codable {
 
 // MARK: - PayloadWeight
 struct PayloadWeight: Codable {
-    let id: String
+    let id: String?
     let name: String?
     let kg: Int?
     let lb: Int?
@@ -137,29 +151,31 @@ struct PayloadWeight: Codable {
 
 // MARK: - SecondStage
 struct SecondStage: Codable {
+    let thrust: Thrust?
+    let payloads: Payloads?
+    let reusable: Bool?
     let engines: Int?
     let fuelAmountTons: Double?
     let burnTimeSEC: Int?
-    let thrust: Thrust?
-    let payloads: Payloads?
 
     enum CodingKeys: String, CodingKey {
+        case thrust
+        case payloads
+        case reusable
         case engines
         case fuelAmountTons = "fuel_amount_tons"
         case burnTimeSEC = "burn_time_sec"
-        case thrust
-        case payloads
     }
 }
 
 // MARK: - Payloads
 struct Payloads: Codable {
-    let option1: String?
     let compositeFairing: CompositeFairing?
+    let option1: String?
 
     enum CodingKeys: String, CodingKey {
-        case option1 = "option_1"
         case compositeFairing = "composite_fairing"
+        case option1 = "option_1"
     }
 }
 
@@ -167,5 +183,9 @@ struct Payloads: Codable {
 struct CompositeFairing: Codable {
     let height: Diameter?
     let diameter: Diameter?
-}
 
+    enum CodingKeys: String, CodingKey {
+        case height
+        case diameter
+    }
+}
