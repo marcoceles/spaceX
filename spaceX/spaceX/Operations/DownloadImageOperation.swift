@@ -9,14 +9,13 @@ import UIKit
 import Alamofire
 
 class DownloadImageOperation: Operation {
-    //1
+
     let url: URL
     private var isCompleted: Bool = false
     private var isPerforming: Bool = false
     var imageDownloaded : UIImage? = nil
     var error: AFError? = nil
 
-    //2
     init(_ url: URL) {
         self.url = url
     }
