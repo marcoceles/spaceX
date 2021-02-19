@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class RocketsViewController: UIViewController {
 
@@ -53,5 +54,16 @@ extension RocketsViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "rocketCell") as! RocketTableViewCell
         cell.rocket = self.rockets?[indexPath.row]
         return cell
+    }
+}
+
+//MARK: - TableViewDelegate
+extension RocketsViewController: UITableViewDelegate{
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let rocket = self.rockets?[indexPath.row] else {return}
+        let detailView = RocketDetailView(rocket: rocket)
+        let hostingCtrl = UIHostingController(rootView: detailView)
+        self.navigationController?.pushViewController(hostingCtrl, animated: true)
     }
 }
