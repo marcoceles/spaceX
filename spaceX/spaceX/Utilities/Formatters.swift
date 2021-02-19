@@ -18,3 +18,12 @@ let mediumStyleDateFormatter: DateFormatter = {
     formatter.dateStyle = .medium
     return formatter
 }()
+
+let usDollarFormatter: NumberFormatter = {
+    let formatter = NumberFormatter()
+    formatter.locale = Locale.init(identifier: "en_US")
+    formatter.alwaysShowsDecimalSeparator = true
+    formatter.usesGroupingSeparator = true
+    formatter.numberStyle = .currency
+    return formatter
+}()
