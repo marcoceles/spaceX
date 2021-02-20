@@ -18,13 +18,19 @@ struct RocketDetailViewModel {
         return URL(string: urlStr)
     }
 
-    var status: Text{
+    var status: String{
         if item.active ?? false{
-            return Text("ACTIVE")
-                .foregroundColor(.green)
+            return "ACTIVE"
         }else{
-            return Text("INACTIVE")
-                .foregroundColor(.red)
+            return "INACTIVE"
+        }
+    }
+
+    var statusColor: UIColor{
+        if item.active ?? false{
+            return UIColor.green
+        }else{
+            return UIColor.red
         }
     }
 
@@ -39,11 +45,14 @@ struct RocketDetailViewModel {
     }
 
     var costPerLaunch: String{
-        return usDollarFormatter.string(from: (item.costPerLaunch as NSNumber?) ?? 0) ?? "-"
+        guard let cost =  item.costPerLaunch as NSNumber? else{
+            return "-"
+        }
+        return usDollarFormatter.string(from: cost) ?? "-"
     }
 
     var successRate: String{
-        return String(format: "%d%", item.successRatePct ?? 0)
+        return String(format: "%d%%", item.successRatePct ?? 0)
     }
     var successRateColor: UIColor{
         guard let rate = item.successRatePct else{

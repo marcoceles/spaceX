@@ -28,7 +28,8 @@ struct RocketDetailView: View {
                 VStack(alignment: .leading){
                     VStack(alignment: .leading, spacing: 8) {
                         VStack(alignment: .leading) {
-                            viewModel.status
+                            Text(viewModel.status)
+                                .foregroundColor(Color(viewModel.statusColor))
                         }
 
                         VStack(alignment: .leading) {
