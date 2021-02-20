@@ -13,6 +13,7 @@
 		360B5E3E25DEFA74002D8603 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B5E3D25DEFA74002D8603 /* ImageCache.swift */; };
 		360B5E4F25DFB644002D8603 /* RocketDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B5E4E25DFB644002D8603 /* RocketDetailView.swift */; };
 		360B5E6025DFD639002D8603 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B5E5F25DFD639002D8603 /* RemoteImage.swift */; };
+		360B5E6625E012B2002D8603 /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B5E6525E012B2002D8603 /* RocketViewModel.swift */; };
 		360CBCE525DD7D2700168BE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBCE425DD7D2700168BE1 /* AppDelegate.swift */; };
 		360CBCE725DD7D2700168BE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBCE625DD7D2700168BE1 /* SceneDelegate.swift */; };
 		360CBCE925DD7D2700168BE1 /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBCE825DD7D2700168BE1 /* RocketsViewController.swift */; };
@@ -60,6 +61,8 @@
 		360B5E3D25DEFA74002D8603 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		360B5E4E25DFB644002D8603 /* RocketDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailView.swift; sourceTree = "<group>"; };
 		360B5E5F25DFD639002D8603 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		360B5E6525E012B2002D8603 /* RocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModel.swift; sourceTree = "<group>"; };
+		360B5E6D25E12E2B002D8603 /* RocketsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsListView.swift; sourceTree = "<group>"; };
 		360CBCE125DD7D2700168BE1 /* spaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		360CBCE425DD7D2700168BE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		360CBCE625DD7D2700168BE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,8 +139,17 @@
 			children = (
 				360B5E4E25DFB644002D8603 /* RocketDetailView.swift */,
 				360B5E5F25DFD639002D8603 /* RemoteImage.swift */,
+				360B5E6D25E12E2B002D8603 /* RocketsListView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		360B5E6425E01294002D8603 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				360B5E6525E012B2002D8603 /* RocketViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		360CBCD825DD7D2700168BE1 = {
@@ -170,6 +182,7 @@
 				36E2913F25DD887A001CD27B /* Model */,
 				360B5E2D25DEE881002D8603 /* Operations */,
 				3682CB0B25DE750C00A049BA /* Cells */,
+				360B5E6425E01294002D8603 /* ViewModels */,
 				360B5E4D25DFB609002D8603 /* View */,
 				3682CB0A25DE74EA00A049BA /* ViewControllers */,
 				360CBCE425DD7D2700168BE1 /* AppDelegate.swift */,
@@ -531,6 +544,7 @@
 				36E2914125DD8892001CD27B /* Rocket.swift in Sources */,
 				360CBCEF25DD7D2700168BE1 /* spaceX.xcdatamodeld in Sources */,
 				360B5E6025DFD639002D8603 /* RemoteImage.swift in Sources */,
+				360B5E6625E012B2002D8603 /* RocketViewModel.swift in Sources */,
 				360B5E4F25DFB644002D8603 /* RocketDetailView.swift in Sources */,
 				360B5E2F25DEE8A0002D8603 /* DownloadImageOperation.swift in Sources */,
 				36E2913825DD847E001CD27B /* APIEndpoint.swift in Sources */,
