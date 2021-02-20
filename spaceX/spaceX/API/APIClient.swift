@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import Combine
 
 class APIClient{
 
@@ -20,19 +21,18 @@ class APIClient{
             completion(response.result)
         }
     }
+
+    private func makeAPICall<O>(_ endpoint: APIEndpoint) -> AnyPublisher<O, AFError> where O: Decodable {
+        let publisher = AF.request(endpoint)
+            .validate()
+            .publishDecodable(type: O.self)
+        return publisher.value()
+    }
 }
 
 extension APIClient{
 
-    public func getRockets(_ completion: @escaping (Result<[Rocket], Error>) -> Void){
-        self.makeAPICall(.getRockets, responseClass: [Rocket].self, completion: { result in
-
-            switch result{
-            case .success(let car):
-                completion(.success(car))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        })
+    func getRockets() -> AnyPublisher<[Rocket], AFError> {
+        return makeAPICall(.getRockets)
     }
 }
