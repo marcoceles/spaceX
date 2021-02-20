@@ -49,7 +49,7 @@ extension RocketsViewController: UITableViewDataSource{
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rocketCell") as! RocketTableViewCell
-        cell.rocket = rockets[indexPath.row]
+        cell.viewModel = RocketDetailViewModel(item: rockets[indexPath.row]) 
         return cell
     }
 }
@@ -59,7 +59,7 @@ extension RocketsViewController: UITableViewDelegate{
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let rocket = rockets[indexPath.row]
-        let detailView = RocketDetailView(rocket: rocket)
+        let detailView = RocketDetailView(viewModel: RocketDetailViewModel(item: rocket))
         let hostingCtrl = UIHostingController(rootView: detailView)
         self.navigationController?.pushViewController(hostingCtrl, animated: true)
     }

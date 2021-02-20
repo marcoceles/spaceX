@@ -14,6 +14,7 @@
 		360B5E4F25DFB644002D8603 /* RocketDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B5E4E25DFB644002D8603 /* RocketDetailView.swift */; };
 		360B5E6025DFD639002D8603 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B5E5F25DFD639002D8603 /* RemoteImage.swift */; };
 		360B5E6625E012B2002D8603 /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B5E6525E012B2002D8603 /* RocketViewModel.swift */; };
+		360B5E7625E13DA2002D8603 /* RocketDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B5E7525E13DA2002D8603 /* RocketDetailViewModel.swift */; };
 		360CBCE525DD7D2700168BE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBCE425DD7D2700168BE1 /* AppDelegate.swift */; };
 		360CBCE725DD7D2700168BE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBCE625DD7D2700168BE1 /* SceneDelegate.swift */; };
 		360CBCE925DD7D2700168BE1 /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBCE825DD7D2700168BE1 /* RocketsViewController.swift */; };
@@ -62,7 +63,7 @@
 		360B5E4E25DFB644002D8603 /* RocketDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailView.swift; sourceTree = "<group>"; };
 		360B5E5F25DFD639002D8603 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		360B5E6525E012B2002D8603 /* RocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModel.swift; sourceTree = "<group>"; };
-		360B5E6D25E12E2B002D8603 /* RocketsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsListView.swift; sourceTree = "<group>"; };
+		360B5E7525E13DA2002D8603 /* RocketDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailViewModel.swift; sourceTree = "<group>"; };
 		360CBCE125DD7D2700168BE1 /* spaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		360CBCE425DD7D2700168BE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		360CBCE625DD7D2700168BE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,7 +140,6 @@
 			children = (
 				360B5E4E25DFB644002D8603 /* RocketDetailView.swift */,
 				360B5E5F25DFD639002D8603 /* RemoteImage.swift */,
-				360B5E6D25E12E2B002D8603 /* RocketsListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -148,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				360B5E6525E012B2002D8603 /* RocketViewModel.swift */,
+				360B5E7525E13DA2002D8603 /* RocketDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -547,6 +548,7 @@
 				360B5E6625E012B2002D8603 /* RocketViewModel.swift in Sources */,
 				360B5E4F25DFB644002D8603 /* RocketDetailView.swift in Sources */,
 				360B5E2F25DEE8A0002D8603 /* DownloadImageOperation.swift in Sources */,
+				360B5E7625E13DA2002D8603 /* RocketDetailViewModel.swift in Sources */,
 				36E2913825DD847E001CD27B /* APIEndpoint.swift in Sources */,
 				3682CB0D25DE753A00A049BA /* RocketTableViewCell.swift in Sources */,
 			);

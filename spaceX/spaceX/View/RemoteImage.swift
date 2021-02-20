@@ -16,17 +16,17 @@ struct RemoteImage: View {
         var image: UIImage?
         var state = LoadState.loading
 
-        init(url: String?) {
-            guard let stringUrl = url, let parsedURL = URL(string: stringUrl) else {
+        init(url: URL?) {
+            guard let url = url else {
                 return
             }
 
-            if let imageCahed = ImageCache.shared.image(for: parsedURL){
+            if let imageCahed = ImageCache.shared.image(for: url){
                 self.image = imageCahed
                 self.state = .success
                 self.objectWillChange.send()
             }else{
-                let downloader = DownloadImageOperation(parsedURL)
+                let downloader = DownloadImageOperation(url)
                 downloader.completionBlock = {
                     DispatchQueue.main.async {
 
@@ -37,7 +37,7 @@ struct RemoteImage: View {
                         if let image = downloader.imageDownloaded{
                             self.image = image
                             self.state = .success
-                            ImageCache.shared.cache(image: image, for: parsedURL)
+                            ImageCache.shared.cache(image: image, for: url)
                         }else{
                             self.state = .failure
                         }
@@ -60,7 +60,7 @@ struct RemoteImage: View {
             .resizable()
     }
 
-    init(url: String?, loading: Image = Image("rocket_placeholder"), failure: Image = Image("rocket_placeholder")) {
+    init(url: URL?, loading: Image = Image("rocket_placeholder"), failure: Image = Image("rocket_placeholder")) {
         _loader = StateObject(wrappedValue: Loader(url: url))
         self.loading = loading
         self.failure = failure

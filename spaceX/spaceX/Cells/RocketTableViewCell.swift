@@ -18,12 +18,11 @@ class RocketTableViewCell: UITableViewCell {
     @IBOutlet weak var successRateContainerView: UIView!
 
     //MARK: - Properties
-    var rocket: Rocket?{
+    var viewModel: RocketDetailViewModel!{
         didSet{
             setupUI()
             updateUI()
-            guard let imageUrlString = rocket?.flickrImages?.first,
-                  let imageUrl = URL(string: imageUrlString) else {return}
+            guard let imageUrl = viewModel.imageUrl else {return}
             self.rocketImageView.loadImageAsync(for: imageUrl)
         }
     }
@@ -35,34 +34,10 @@ class RocketTableViewCell: UITableViewCell {
     }
 
     private func updateUI(){
-        self.nameLabel.text = rocket?.name
-        if let successRate = rocket?.successRatePct{
-            self.successRateLabel.text = "\(successRate)%"
-        }else{
-            self.successRateLabel.text = "ND%"
-        }
+        self.nameLabel.text = viewModel.item.name
+        self.successRateLabel.text = viewModel.successRate
+        self.successRateContainerView.backgroundColor = viewModel.successRateColor
+        self.firstLaunchDateLabel.text = viewModel.firtsLaunchDate
 
-        self.successRateContainerView.backgroundColor = self.getColor(for: rocket?.successRatePct)
-        
-        if let firstLaunch = rocket?.firstFlight,
-           let date = dateFormatter.date(from: firstLaunch){
-            self.firstLaunchDateLabel.text = mediumStyleDateFormatter.string(from: date)
-        }
-    }
-
-    private func getColor(for successRate: Int?) -> UIColor{
-        guard let rate = successRate else{
-            return .systemGray4
-        }
-        switch rate{
-        case 0...29:
-            return .systemRed
-        case 30...59:
-            return .systemOrange
-        case 60...100:
-            return .systemGreen
-        default:
-            return .systemGray4
-        }
     }
 }
